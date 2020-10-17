@@ -1,0 +1,46 @@
+
+*,*::before,*::after {
+    box-sizing: border-box;
+    background-color: none;
+}
+
+
+body {
+    background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+
+
+  .container-sm{
+      height: 100vh;
+  }
+.dashboard h1{
+    color:#F2B705;
+    background-color:#404873;
+}
+
+    /* Footer */
+/* containing position sticky */
+footer {
+    text-align: center;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+    color: #024059;
+    
+}
+.copyright {
+    font-size: larger;
+
+}
+.fab {
+    margin: 3px 10px 3px 10px;
+    text-align: center;
+    color:#024059 ;
+    
+}
