@@ -12,6 +12,15 @@ body {
     background-size: cover;
     -o-background-size: cover;
   }
+  head {
+    text-align: center;
+    
+  }
+  header h1{
+     
+    color:#F2B705;
+    background-color:#404873;
+}
 
 
   .container-sm{
@@ -20,6 +29,15 @@ body {
 .dashboard h1{
     color:#F2B705;
     background-color:#404873;
+}
+
+.form-inline {
+    margin-top: 20px;
+    background-color:#F29F05 ;
+}
+.card-body {
+    margin-top: 20px;
+    background-color: none;
 }
 
     /* Footer */
