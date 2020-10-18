@@ -8,55 +8,104 @@
     <!-- adding my css -->
     <link rel="stylesheet" href="./style.css">
    <link rel="shortcut icon" href="Assets\favicon-32x32.png" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Paytone+One&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/1efd5aad95.js" crossorigin="anonymous"></script>
     <title>My Weather</title>
 </head>
 <body>
-    <header>
-        <button type="button" class="btn btn-lg "><H1>My Weather Dashboard</H1></button>
+    <header class="parent">
+      <H1 class="child">My Weather Dashboard </H1>
+        <!-- <button type="button" class="btn btn-lg " id="bkgd"><H1>My Weather Dashboard</H1></button> -->
     </header>
     
        
   <div class="container-sm">
-    <div class="row">
+    <div class="row rng">
         <div class="col-3">
+          <div class="row citywrapper">
+
+
             <form class="form-inline ">
-                <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search City" aria-label="Search">
-                <a href="#" id="search"> <i class="fas fa-search" aria-hidden="true"></i></a>
-              </form>
-            <!-- <div id="city-container"class="card col-sm"> -->
-                <!-- <form class="form-inline ">
-                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
-                    <a href="#" id="search"> <i class="fas fa-search" aria-hidden="true"></i></a>
-                  </form> -->
-                <div class="card-body">
-                   <table class="table">
-                       <H4>Recent Searches</H4>
-                                   
-                  <tr>
-                      <td>city #1</td>
-                  </tr>
-                  <tr>
-                    <td>city #2</td>
+              <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search City" aria-label="Search">
+              <a href="#" id="search"> <i class="fas fa-search" aria-hidden="true"></i></a>
+            </form>
+        
+              <div class="card-body">
+                 <table class="table">
+                     <H4>Recent Searches</H4>
+                                 
+                <tr>
+                    <td>city #1</td>
                 </tr>
                 <tr>
-                    <td>city #3</td>
-                </tr>
-             
-                  <td></td>
-              
-                </table>
-                 </div>
-            <!-- </div> -->
+                  <td>city #2</td>
+              </tr>
+              <tr>
+                  <td>city #3</td>
+              </tr>
            
+                <td></td>
             
-
-
+              </table>
+               </div>
+          
+          </div>
         </div>
-
-
         <div class="col-9 dashboard">
-            <button type="button" class="btn btn-lg "><H1>5 Day Forecast </H1></button>
+            <h2>5 day Forecast</h2>
+            <div class="row">
+
+
+              <!-- <div class="class-columns"> -->
+                    <div class="col-sm mycard">
+                      <div class="card bg-transparent border-light ">
+                        <div class="card-body ">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm mycard">
+                      <div class="card bg-transparent border-light ">
+                        <div class="card-body ">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm mycard">
+                      <div class="card bg-transparent border-light ">
+                        <div class="card-body ">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-sm mycard">
+                      <div class="card bg-transparent border-light ">
+                        <div class="card-body ">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    
+                 
+
+              <!-- </div> -->
+             
+
+            </div>
             
 
 

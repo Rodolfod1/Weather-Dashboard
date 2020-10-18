@@ -12,24 +12,53 @@ body {
     background-size: cover;
     -o-background-size: cover;
   }
-  head {
-    text-align: center;
-    
-  }
-  header h1{
-     
-    color:#F2B705;
-    background-color:#404873;
+
+  header {
+      text-align: center;
+      /* background-color: #F2B988;
+      opacity:15%; */
+ }  
+
+
+.parent{
+    /* text-align: center; */
+      background-color: #F2B988;
+      /* opacity:50%; */
 }
+.child{
+    color:black ;
+    /* color:#F2B988; */
+    font-family: 'Paytone One', sans-serif;
+}
+.rng {
+    background-color: chartreuse;
+    margin: none;
+    padding: none;
+    width: 100vw;
+}
+
+.mycard {
+    max-width: 20%;
+   margin-right: 10px;
+}
+
+.citywrapper {
+    margin: 0 60px 0 0;
+    background-color: #ffff;
+}
+
 
 
   .container-sm{
       height: 100vh;
+      padding:0;
+      margin: 0;
   }
 .dashboard h1{
     color:#F2B705;
     background-color:#404873;
 }
+
 
 .form-inline {
     margin-top: 20px;
@@ -50,7 +79,7 @@ footer {
     width: 100%;
     margin-top: 20px;
     color: #024059;
-    
+
 }
 .copyright {
     font-size: larger;
@@ -60,5 +89,5 @@ footer {
     margin: 3px 10px 3px 10px;
     text-align: center;
     color:#024059 ;
-    
+
 }
