@@ -21,21 +21,24 @@ $(document).ready(function (){
             url:qUrl,
             method:"GET",
         }).then(function(response){
-            // console.log(response.city.name+","+response.city.country);
-            console.log(response);
-
-            
+                     
             // // adding the city and the country from the response we got 
              $("#cityName").text(response.name+","+response.sys.country);
             // // getting the local current time using the moment.js
-             $("#lTime").text(Ctime.format("llll"));
+             $("#lTime").text(Ctime.format("llll")+ "  Your local time.");
             // to set the local time at destination city
              var theTime=moment.utc().seconds(response.timezone);
              // the data is displaye in seconds to utc and we transform it to user friendly date
             $("#daCt").text(theTime.format("llll"));
-            //displaying the current condition statement
-            $("#cCon").text("conditions:  "+response.weather[0].description);
-            // //change kelvins to fahrenheit 
+            // Retrieving the icon per https://openweathermap.org/weather-conditions method
+             var iconCode= response.weather[0].icon;
+             console.log(iconCode);
+             var iconurl="http://openweathermap.org/img/wn/"+iconCode+"@2x.png";
+             console.log(iconurl);
+            //displaying the current condition statement including the icon
+            $("#cCon").text(response.weather[0].description);
+            $("#imicon").attr("src",iconurl);
+            //displaying temperature 
             var tnow=(response.main.temp).toFixed(1);
              $("#cTemp").text("Temp: "+tnow+"F");
             // //feeiling 
@@ -45,37 +48,39 @@ $(document).ready(function (){
              if(response.snow){
                 $("#cRain").text("Accumulation: "+JSON.stringify(response.snow));
              }
+             //if there is ran then:
              if(response.rain){
               $("#cRain").text("Precipitation: "+JSON.stringify(response.rain));
             }
+            //if there is no rain neither snow then:
             if(!response.rain&&!response.snow){
                 $("#cRain").text("Precipitation: No data available ");
             }
+            //displaying humidity 
+            $("#wet").text("Humidity: "+response.main.humidity+" %");
+            //displaying wind speed 
             $("#Wind").text("Wind Speed: "+response.wind.speed+" MPH");
-          
-            
-
-
-
-
-            // var weathericon= response.weather[0].icon;
-            // var iconurl="https://openweathermap.org/img/wn/"+weathericon +"@2x.png";
-            // // The date format method is taken from the  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-            // var date=new Date(response.dt*1000).toLocaleDateString();
-            // //parse the response for name of city and concanatig the date and icon.
-            // $("#cityName").html(response.name +"("+date+")" + "<img src="+iconurl+">");
-            // // parse the response to display the current temperature.
-            // // Convert the temp to fahrenheit
-
-
-
+ 
         })
+/// calling the 5 day forecast 
+ var fUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY;
+// // calling our Ajax function 
+ $.ajax({
+     url:fUrl,
+     method:"GET",
+ }).then(function(prompt){
 
-    }
+     console.log(prompt);
+
+    })
+
+
 
    
 
 
+//this bracket is for fetch weather function
+    }
 
 
 

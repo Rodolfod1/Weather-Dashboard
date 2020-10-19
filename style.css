@@ -21,7 +21,9 @@ body {
      
  }  
 
-
+.Subtitle{
+    text-align: center;
+}
 .rng {
    
     margin: none;
@@ -30,8 +32,11 @@ body {
 }
 
 .mycard {
-    max-width: 20%;
-   margin-right: 10px;
+    /* max-width: 20%; */
+    margin: 0 0 5px 5px;
+   /* margin-right: 5px;
+   margin-left: 5px;
+   margin-bottom: 5px; */
    
 }
 

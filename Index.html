@@ -17,23 +17,17 @@
       <H1 class="child">My Weather Dashboard </H1>
         <!-- <button type="button" class="btn btn-lg " id="bkgd"><H1>My Weather Dashboard</H1></button> -->
     </header>
-    
-       
   <div class="container-sm">
     <div class="row rng">
         <div class="col-3">
           <div class="row citywrapper">
-
-
             <form class="form-inline ">
               <input class="form-control form-control-sm mr-3 w-75" id="citySelect" type="text" placeholder="Search City" aria-label="Search">
               <a href="#" id="search"> <i class="fas fa-search" aria-hidden="true"></i></a>
-            </form>
-        
+            </form>        
               <div class="card-body">
                  <table class="table">
-                     <H4>Recent Searches</H4>
-                                 
+                     <H4>Recent Searches</H4>                  
                 <tr>
                     <td>city #1</td>
                 </tr>
@@ -42,35 +36,35 @@
               </tr>
               <tr>
                   <td>city #3</td>
-              </tr>
-           
-                <td></td>
-            
+              </tr>           
+                <td></td>            
               </table>
-               </div>
-          
+               </div>          
           </div>
         </div>
         <div class="col-9 dashboard">
           <article>
-            <h2>Current weather conditions in <span id="cityName">Your city</span></h2>
-            <h3>Where the current time is: <span id="daCt"></span></h3>
-            <ul>
-              <li id="cCon"></li>
+            <h4>Current weather conditions in <span id="cityName">Your city</span></h4>
+            <h6>Where the current time is: <span id="daCt"></span></h6>
+            <img id="imicon" src="" alt=""><Span id="cCon"><h6></h6></Span>
+            <ul id>
+              <!-- <li id="cCon"><img id="imicon" src="" alt=""></li> -->
               <li id="cTemp"></li>
               <li id="cFeel"></li>
               <li id="cRain"></li>
+              <li id="wet"></li>
               <li id="Wind"></li>
               <li>UV inedex </li>
             </ul>
             <p>Last updated <span id="lTime">Time of query</span></p>
           </article>
-            <h2>5 day Forecast</h2>
+
+        </div> 
+    </div>    
+    <div class="container-sm"> 
+        <h2 class="Subtitle">5 day Forecast</h2>
             <div class="row">
-
-
-              <!-- <div class="class-columns"> -->
-                    <div class="col-sm mycard">
+                     <div class="col-sm mycard">
                       <div class="card bg-transparent border-light ">
                         <div class="card-body bgcrd ">
                           <h5 class="card-title">Card title</h5>
@@ -122,19 +116,18 @@
 
 
                     
-                 
+            </div>             
 
               <!-- </div> -->
              
 
-            </div>
-            
+           
 
 
 
 
-        </div>
-      </div>
+        
+    </div>
 
 
 
