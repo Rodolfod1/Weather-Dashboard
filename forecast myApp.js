@@ -24,33 +24,31 @@ $(document).ready(function (){
             console.log(response);
 
             
-            // // adding the city and the country from the response we got 
-             $("#cityName").text(response.name+","+response.sys.country);
-            // // getting the local current time using the moment.js
-             $("#lTime").text(Ctime.format("llll"));
+            // adding the city and the country from the response we got 
+            $("#cityName").text(response.city.name+","+response.city.country);
+            // getting the local current time using the moment.js
+            $("#lTime").text(Ctime.format("llll"));
             // to set the local time at destination city
-             var theTime=moment.utc().seconds(response.timezone);
-             // the data is displaye in seconds to utc and we transform it to user friendly date
+            var theTime=moment.utc().seconds(response.city.timezone);
+            // the data is displaye in seconds to utc and we transform it to user friendly date
             $("#daCt").text(theTime.format("llll"));
-            //displaying the current condition statement
-            $("#cCon").text("conditions:  "+response.weather[0].description);
-            // //change kelvins to fahrenheit 
-            var tnow=((response.main.temp - 273.15) * 1.80 + 32).toFixed(1)
-             $("#cTemp").text("Temp: "+tnow+"F")
-            // //feeiling 
-             var feelnow=((response.main.feels_like - 273.15) * 1.80 + 32).toFixed(1)
-             $("#cFeel").text("Feels like:  "+feelnow+"F");
-             //if there is a snow forecast then :
-             if(response.snow){
-                $("#cRain").text("Accumulation: "+JSON.stringify(response.snow));
-             }
-             if(response.rain){
-              $("#cRain").text("Precipitation: "+JSON.stringify(response.rain));
-            }
-            if(!response.rain&&!response.snow){
-                $("#cRain").text("Precipitation: No data available ");
-            }
+            //change kelvins to fahrenheit 
+            var tnow=((response.list[0].main.temp - 273.15) * 1.80 + 32).toFixed(1)
+            $("#cTemp").text("Temp: "+tnow+"F")
+            //feeiling 
+            var feelnow=((response.list[0].main.feels_like - 273.15) * 1.80 + 32).toFixed(1)
+            $("#cFeel").text("Feels like:  "+feelnow+"F");
             
+            if (response.list[0].rain===undefined){
+               
+                $("#cRain").text("Chance of Rain on the next 3hrs: Data not available for this location");
+            }
+            else {
+                
+                 var cRain0=(response.list[0].rain["3h"]*10).toFixed(0);
+                $("#cRain").text("Chance of Rain on the next 3hrs: "+cRain0+"%");
+                 rainStat=true;
+            }
           
             
 
