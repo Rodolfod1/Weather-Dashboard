@@ -6,7 +6,7 @@
 
 
 body {
-    background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg') no-repeat center center fixed;
+    /* background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg') no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -15,23 +15,15 @@ body {
 
   header {
       text-align: center;
-      /* background-color: #F2B988;
-      opacity:15%; */
+      background-color: #40487380;
+      color:black ;
+      font-family: 'Paytone One', sans-serif;
+     
  }  
 
 
-.parent{
-    /* text-align: center; */
-      background-color: #F2B988;
-      /* opacity:50%; */
-}
-.child{
-    color:black ;
-    /* color:#F2B988; */
-    font-family: 'Paytone One', sans-serif;
-}
 .rng {
-    background-color: chartreuse;
+   
     margin: none;
     padding: none;
     width: 100vw;
@@ -40,11 +32,12 @@ body {
 .mycard {
     max-width: 20%;
    margin-right: 10px;
+   
 }
 
 .citywrapper {
     margin: 0 60px 0 0;
-    background-color: #ffff;
+    
 }
 
 
@@ -66,9 +59,17 @@ body {
 }
 .card-body {
     margin-top: 20px;
-    background-color: none;
+   
 }
 
+.bgcrd {
+    background-color: #B9BF0480;
+    margin: 0;
+}
+
+.form-inline {
+    margin-left: 20px;
+}
     /* Footer */
 /* containing position sticky */
 footer {
