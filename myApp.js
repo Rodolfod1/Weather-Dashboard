@@ -7,6 +7,7 @@ var qUrl= "";
 
 $(document).ready(function (){
     var Ctime=moment();
+    var Units="imperial";
     
     $("#search").on("click",fetchWeather);
 
@@ -14,7 +15,7 @@ $(document).ready(function (){
      City=$("#citySelect").val();
       
         // qUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY;
-        qUrl="http://api.openweathermap.org/data/2.5/weather?q="+City+"&appid="+KEY;
+        qUrl="http://api.openweathermap.org/data/2.5/weather?q="+City+"&appid="+KEY+"&units="+Units;
         // calling our Ajax function 
         $.ajax({
             url:qUrl,
@@ -35,10 +36,10 @@ $(document).ready(function (){
             //displaying the current condition statement
             $("#cCon").text("conditions:  "+response.weather[0].description);
             // //change kelvins to fahrenheit 
-            var tnow=((response.main.temp - 273.15) * 1.80 + 32).toFixed(1)
-             $("#cTemp").text("Temp: "+tnow+"F")
+            var tnow=(response.main.temp).toFixed(1);
+             $("#cTemp").text("Temp: "+tnow+"F");
             // //feeiling 
-             var feelnow=((response.main.feels_like - 273.15) * 1.80 + 32).toFixed(1)
+             var feelnow=(response.main.feels_like).toFixed(1);
              $("#cFeel").text("Feels like:  "+feelnow+"F");
              //if there is a snow forecast then :
              if(response.snow){
@@ -50,7 +51,7 @@ $(document).ready(function (){
             if(!response.rain&&!response.snow){
                 $("#cRain").text("Precipitation: No data available ");
             }
-            
+            $("#Wind").text("Wind Speed: "+response.wind.speed+" MPH");
           
             
 
