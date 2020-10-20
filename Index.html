@@ -13,58 +13,63 @@
     <title>My Weather</title>
 </head>
 <body>
-    <header class="parent">
-      <H1 class="child">My Weather Dashboard </H1>
-        <!-- <button type="button" class="btn btn-lg " id="bkgd"><H1>My Weather Dashboard</H1></button> -->
-    </header>
-  <div class="container-sm">
-    <div class="row rng">
-        <div class="col-3">
-          <div class="row citywrapper">
-            <form class="form-inline ">
-              <input class="form-control form-control-sm mr-3 w-75" id="citySelect" type="text" placeholder="Search City" aria-label="Search">
-              <a href="#" id="search"> <i class="fas fa-search" aria-hidden="true"></i></a>
-            </form>        
-              <div class="card-body">
-                 <table class="table">
-                     <H4>Recent Searches</H4>                  
-                <tr>
-                    <td id="city0">city #1</td>
-                </tr>
-                <tr>
-                  <td id="city1">city #2</td>
-              </tr>
-              <tr>
-                  <td id="city2">city #3</td>
-              </tr>           
-                <td></td>            
-              </table>
-               </div>          
-          </div>
-        </div>
-        <div class="col-9 dashboard">
-          <article>
-            <h4>Current weather conditions in <span id="cityName">Your city</span></h4>
-            <h6>Where the current time is: <span id="daCt"></span></h6>
-            <img id="imicon" src="" alt=""><Span id="cCon"><h6></h6></Span>
-            <ul id>
-              <li id="cTemp"></li>
-              <li id="cFeel"></li>
-              <li id="cRain"></li>
-              <li id="wet"></li>
-              <li id="Wind"></li>
-              <li>UV inedex: <span class="badge badge-pill badge-success" id="UV">00.00</span> </li>
-            </ul>
-            <p>Last updated <span id="lTime">Time of query</span></p>
-          </article>
+  <div class="hero">
+        <header class="parent">
+          <H1 class="child">My Weather Dashboard </H1>
+            <!-- <button type="button" class="btn btn-lg " id="bkgd"><H1>My Weather Dashboard</H1></button> -->
+        </header>
+      <div class="container-sm">
+        <div class="row rng">
+            <div class="col-3">
+              <div class="row citywrapper">
+                <form class="form-inline ">
+                  <input class="form-control form-control-sm mr-3 w-75" id="citySelect" type="text" placeholder="Search City" aria-label="Search">
+                  <a href="#" id="search"> <i class="fas fa-search" aria-hidden="true"></i></a>
+                </form>        
+                  <div class="card-body">
+                    <table class="table">
+                        <H4>Recent Searches</H4>                  
+                    <tr>
+                        <td id="city0">city #1</td>
+                    </tr>
+                    <tr>
+                      <td id="city1">city #2</td>
+                  </tr>
+                  <tr>
+                      <td id="city2">city #3</td>
+                  </tr>           
+                    <td></td>            
+                  </table>
+                  </div>          
+              </div>
+            </div>
+            <div class="col-9 dashboard">
+              <article>
+                <h4>Current weather conditions in <span id="cityName">Your city</span></h4>
+                <h6>Where the current time is: <span id="daCt"></span></h6>
+                <img id="imicon" src="" alt=""><Span id="cCon"><h6></h6></Span>
+                <ul id>
+                  <li id="cTemp"></li>
+                  <li id="cFeel"></li>
+                  <li id="cRain"></li>
+                  <li id="wet"></li>
+                  <li id="Wind"></li>
+                  <li>UV inedex: <span class="badge badge-pill badge-success" id="UV">00.00</span> </li>
+                </ul>
+                <p>Last updated <span id="lTime">Time of query</span></p>
+              </article>
 
-        </div> 
-    </div>    
-    <div class="container-sm"> 
-        <h2 class="Subtitle">5 day Forecast</h2>
-            <div class="row target1"></div>              
-    </div>
+            </div> 
+        </div>    
+        <div class="container-sm"> 
+            <h2 class="Subtitle">5 day Forecast</h2>
+                <div class="row target1"></div>              
+        </div>
+      </div>
+
+
   </div>
+
       <!-- linking AJax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- linking my script  -->

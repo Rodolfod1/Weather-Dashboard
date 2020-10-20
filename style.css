@@ -5,15 +5,24 @@
 }
 
 
-body {
-    /* background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg') no-repeat center center fixed; */
+.hero{
+    position: relative;
+    height: 300vh;
+}
+
+.hero::before{
+    content: "";
+    background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-  }
+    position: absolute;
+    opacity: 0.75;
+}
 
   header {
+      position: relative;
       text-align: center;
       background-color: #40487380;
       color:black ;

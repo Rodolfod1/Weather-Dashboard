@@ -25,6 +25,9 @@ $(document).ready(function (){
     function fetchWeather(City){
         $(".target1").empty(); // removes all previous information from the cards 
      City=$("#citySelect").val();
+     if(!City){
+         alert("Please add a City - be mindful of the spelling");
+     }
      Cities={Ct:City};
      writeMem();
         // qUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY;
@@ -52,11 +55,11 @@ $(document).ready(function (){
             $("#cCon").text(response.weather[0].description);
             $("#imicon").attr("src",iconurl);
             //displaying temperature 
-            var tnow=(response.main.temp).toFixed(1);
-             $("#cTemp").text("Temp: "+tnow+"F");
+            var tnow=(response.main.temp).toFixed(0);
+             $("#cTemp").text("Temp: "+tnow+" F");
             // //feeiling 
-             var feelnow=(response.main.feels_like).toFixed(1);
-             $("#cFeel").text("Feels like:  "+feelnow+"F");
+             var feelnow=(response.main.feels_like).toFixed(0);
+             $("#cFeel").text("Feels like:  "+feelnow+" F");
              //if there is a snow forecast then :
              if(response.snow){
                 $("#cRain").text("Accumulation: "+JSON.stringify(response.snow));
@@ -72,7 +75,7 @@ $(document).ready(function (){
             //displaying humidity 
             $("#wet").text("Humidity: "+response.main.humidity+" %");
             //displaying wind speed 
-            $("#Wind").text("Wind Speed: "+response.wind.speed+" MPH");
+            $("#Wind").text("Wind Speed: "+(response.wind.speed).toFixed(1)+" MPH");
 
 
             //creating the url for uv index function 
@@ -131,9 +134,9 @@ $("#UV").addClass("badge-danger");
         var im2=$("<Span id='cCon'>");
         var im3=$("<h6>").text(prompt.list[i].weather[0].description); //ad icon and description
         var list=$("<ul>");
-        var mem1=$("<li id='tpMax'>").text("Temp Max: "+prompt.list[i].main.temp_max+" F");
+        var mem1=$("<li id='tpMax'>").text("Temp Max: "+(prompt.list[i].main.temp_max).toFixed(0)+" F");
         var mem2=$("<li id='tpMin'>").text("Humidity: "+prompt.list[i].main.humidity+"%");
-        var mem3=$("<li id='wnSpd'>").text("Wind: "+prompt.list[i].wind.speed+" MPH");
+        var mem3=$("<li id='wnSpd'>").text("Wind: "+(prompt.list[i].wind.speed).toFixed(1)+" MPH");
         var ftr=$("<p class='card-text'>");
         var ftr2=$("<small class='text-muted'>").text("Weather Forecast at Noon") /// add last updated 
         // appending all blocks
