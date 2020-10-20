@@ -28,7 +28,7 @@ $(document).ready(function (){
      Cities={Ct:City};
      writeMem();
         // qUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY;
-        qUrl="http://api.openweathermap.org/data/2.5/weather?q="+City+"&appid="+KEY+"&units="+Units;
+        qUrl="https://api.openweathermap.org/data/2.5/weather?q="+City+"&appid="+KEY+"&units="+Units;
         // calling our Ajax function 
         $.ajax({
             url:qUrl,
@@ -47,7 +47,7 @@ $(document).ready(function (){
             // Retrieving the icon per https://openweathermap.org/weather-conditions method
              var iconCode= response.weather[0].icon;
              
-             var iconurl="http://openweathermap.org/img/wn/"+iconCode+"@2x.png";
+             var iconurl="https://openweathermap.org/img/wn/"+iconCode+"@2x.png";
             //displaying the current condition statement including the icon
             $("#cCon").text(response.weather[0].description);
             $("#imicon").attr("src",iconurl);
@@ -76,7 +76,7 @@ $(document).ready(function (){
 
 
             //creating the url for uv index function 
-    var Vurl="http://api.openweathermap.org/data/2.5/uvi?lat="+lati+"&lon="+longi+"&appid="+KEY;   
+    var Vurl="https://api.openweathermap.org/data/2.5/uvi?lat="+lati+"&lon="+longi+"&appid="+KEY;   
     // calling our Ajax function for uv index
      $.ajax({
          url:Vurl,
@@ -106,7 +106,7 @@ $("#UV").addClass("badge-danger");
  
         });
 /// calling the 5 day forecast 
- var fUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY+"&units="+Units;
+ var fUrl="https://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY+"&units="+Units;
 // // calling our Ajax function 
  $.ajax({
      url:fUrl,
@@ -116,7 +116,7 @@ $("#UV").addClass("badge-danger");
      for (i=3; i<36;i+=8){
         var day=moment(prompt.list[i].dt,"X").format("ll");
         var icon2=prompt.list[i].weather[0].icon;
-        var icon2Url="http://openweathermap.org/img/wn/"+icon2+"@2x.png";
+        var icon2Url="https://openweathermap.org/img/wn/"+icon2+"@2x.png";
     
         var div1=$("<div class='col-sm mycard'>");
         var div2=$("<div class='card bg-transparent border-light '>");
