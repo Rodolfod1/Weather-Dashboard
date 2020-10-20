@@ -3,6 +3,7 @@ var City="";
 var KEY="12091064ea4f5182ef297c189602e959"
 var qUrl= "";
 var Clst,Cities=[];
+var longi,lati=0;
 
 $(document).ready(function (){
     var Ctime=moment();
@@ -10,9 +11,9 @@ $(document).ready(function (){
 
     // if there is historical data then load it 
    var isData=localStorage.getItem("City-list");
-   console.log(isData);
+   
    if (isData) {
-    console.log("no es nulo");
+    
     Clst=JSON.parse(isData)
      for(i=0; i<Clst.length; i++){          
              $("#city"+i).text(Clst[i].Ct);
@@ -26,15 +27,15 @@ $(document).ready(function (){
      City=$("#citySelect").val();
      Cities={Ct:City};
      writeMem();
-         
         // qUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY;
         qUrl="http://api.openweathermap.org/data/2.5/weather?q="+City+"&appid="+KEY+"&units="+Units;
         // calling our Ajax function 
         $.ajax({
             url:qUrl,
             method:"GET",
-        }).then(function(response){
-                     
+        }).then(function(response){ 
+            longi=response.coord.lon;
+            lati=response.coord.lat;
             // // adding the city and the country from the response we got 
              $("#cityName").text(response.name+","+response.sys.country);
             // // getting the local current time using the moment.js
@@ -45,9 +46,8 @@ $(document).ready(function (){
             $("#daCt").text(theTime.format("llll"));
             // Retrieving the icon per https://openweathermap.org/weather-conditions method
              var iconCode= response.weather[0].icon;
-             console.log(iconCode);
+             
              var iconurl="http://openweathermap.org/img/wn/"+iconCode+"@2x.png";
-             console.log(iconurl);
             //displaying the current condition statement including the icon
             $("#cCon").text(response.weather[0].description);
             $("#imicon").attr("src",iconurl);
@@ -73,8 +73,38 @@ $(document).ready(function (){
             $("#wet").text("Humidity: "+response.main.humidity+" %");
             //displaying wind speed 
             $("#Wind").text("Wind Speed: "+response.wind.speed+" MPH");
+
+
+            //creating the url for uv index function 
+    var Vurl="http://api.openweathermap.org/data/2.5/uvi?lat="+lati+"&lon="+longi+"&appid="+KEY;   
+    // calling our Ajax function for uv index
+     $.ajax({
+         url:Vurl,
+         method:"GET",
+     }).then(function(answer){     
+console.log(answer);
+var idx=answer.value
+$("#UV").text(idx);
+//all conditions for the uv index
+if(idx<3){
+return false;
+}
+else if (idx<6){
+$("#UV").removeClass("badge-success");
+$("#UV").addClass("badge-warning");
+}
+else {
+$("#UV").removeClass("badge-success");
+$("#UV").addClass("badge-danger");
+}    
+
+
+
+//bracket for uv index
+     });
+
  
-        })
+        });
 /// calling the 5 day forecast 
  var fUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY+"&units="+Units;
 // // calling our Ajax function 
@@ -82,22 +112,16 @@ $(document).ready(function (){
      url:fUrl,
      method:"GET",
  }).then(function(prompt){
-         console.log(prompt);
-     //this part we will recreate the cards dynamically 
+              //this part we will recreate the cards dynamically 
      for (i=3; i<36;i+=8){
         var day=moment(prompt.list[i].dt,"X").format("ll");
         var icon2=prompt.list[i].weather[0].icon;
         var icon2Url="http://openweathermap.org/img/wn/"+icon2+"@2x.png";
-        console.log(icon2);
-
-
+    
         var div1=$("<div class='col-sm mycard'>");
         var div2=$("<div class='card bg-transparent border-light '>");
         var div3=$("<div class='card-body bgcrd'>");
-        
-           
         var div4=$("<h5 class='card-title' id='tit1'>").text(day); // add here the day of forecast
-
         var im1=$("<img id='imicon' alt='iconimage'>");
         im1.attr("src",icon2Url);
         var im2=$("<Span id='cCon'>");
@@ -108,7 +132,7 @@ $(document).ready(function (){
         var mem3=$("<li id='wnSpd'>").text("Wind: "+prompt.list[i].wind.speed+" MPH");
         var ftr=$("<p class='card-text'>");
         var ftr2=$("<small class='text-muted'>").text("Weather Forecast at Noon") /// add last updated 
-
+        // appending all blocks
         div3.append(div4);
         div3.append(im1).append(im2).append(im3);
         list.append(mem1);
@@ -119,41 +143,20 @@ $(document).ready(function (){
         div1.append(div2).append(div3);
         //rendering the bocks 
         $(".target1").append(div1);
-    
-
-
-
+      
     }
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 //this bracket is for the 2nd Ajax function 
     })
+//fetching for UV index
 
 
-
-
-   
 
 
 //this bracket is for fetch weather function
     }
-
-
-
-
-
 
 
 
@@ -179,11 +182,8 @@ $(document).ready(function (){
 
 function loadHis(){
     // write on the list of cities 
-console.log("escribiendo");
-
     isData=localStorage.getItem("City-list");
     Clst=JSON.parse(isData);
-    console.log("esto escribo" + Clst);
-    for(i=0; i<Clst.length; i++){
+       for(i=0; i<Clst.length; i++){
               $("#city"+i).text(Clst[i].Ct);}
  };
