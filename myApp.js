@@ -87,14 +87,18 @@ var idx=answer.value
 $("#UV").text(idx);
 //all conditions for the uv index
 if(idx<3){
-return false;
+    $("#UV").removeClass("badge-warning");
+    $("#UV").removeClass("badge-danger");
+    $("#UV").addClass("badge-success");
 }
 else if (idx<6){
 $("#UV").removeClass("badge-success");
+$("#UV").removeClass("badge-danger");
 $("#UV").addClass("badge-warning");
 }
 else {
 $("#UV").removeClass("badge-success");
+$("#UV").removeClass("badge-warning");
 $("#UV").addClass("badge-danger");
 }    
 
