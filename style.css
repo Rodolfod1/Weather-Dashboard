@@ -12,39 +12,11 @@ body {
     -o-background-size: cover;
   }
 
-/* -webkit-background-size: cover;
--moz-background-size: cover;
-background-size: cover;
--o-background-size: cover; */
-/* 
-.hero{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
-/* 
-.hero::before{
-    content: "";
-    background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg'); 
-    background-size: cover;
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      opacity: 0.75;
-} */
-
 tr {
     color: #ffff;
 }
 
-h1{
- 
-}
+
 
   header {
       position: relative;
@@ -74,12 +46,13 @@ h1{
 }
 
 .citywrapper {
+    max-width: 100%;
     margin: 0 60px 0 0;
     
 }
 
   .container-sm{
-      height: 200vh;
+      height: 350vh;
       padding:0;
       margin: 0;
   }
@@ -100,7 +73,9 @@ a{
 }
 
 .current {
-    max-width: 50%;
+    margin-left: 20px;
+    padding: 5px;
+    align-content: center;
     background-color: #B9BF0490;
 }
 
