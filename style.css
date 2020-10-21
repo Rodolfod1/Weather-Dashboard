@@ -46,7 +46,7 @@ tr {
 }
 
 .citywrapper {
-    max-width: 100%;
+    max-width: 60%;
     margin: 0 60px 0 0;
     
 }
@@ -57,15 +57,29 @@ tr {
       margin: 0;
   }
 
-
+.hide {
+display: none;
+}
 
 .form-inline {
     margin-top: 20px;
-   
 }
+
+.CTS {
+    background-color:#02405965 ;
+    /* color: #FFFFFF; */
+    font-weight: bold;
+
+}
+
+ h4 {
+color:black;
+font-family: 'Paytone One', sans-serif;
+}
+
 a{
     color: black;
-    font-size: x-large;
+   font-size: 1.5em;
 }
 .card-body {
     margin-top: 20px;

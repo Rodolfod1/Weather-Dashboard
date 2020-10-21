@@ -144,7 +144,10 @@ $("#UV").addClass("badge-danger");
         div3.append(ftr).append(ftr2);
         div1.append(div2).append(div3);
         //rendering the bocks 
-        $(".target1").append(div1); 
+        $(".target1").append(div1);
+        $(".Subtitle").removeClass("hide");
+        $(".dashboard").removeClass("hide");
+
     }    
 //this bracket is for the 2nd Ajax function 
     })
