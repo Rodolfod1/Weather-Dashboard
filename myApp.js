@@ -3,23 +3,22 @@ var City="";
 var KEY="12091064ea4f5182ef297c189602e959"
 var qUrl= "";
 var Clst,Cities=[];
-var longi,lati=0;
+var longi,lati,a,b=0;
 
 $(document).ready(function (){
     var Ctime=moment();
     var Units="imperial";
-
     // if there is historical data then load it 
    var isData=localStorage.getItem("City-list");
-   
    if (isData) {
-    
     Clst=JSON.parse(isData)
-     for(i=0; i<Clst.length; i++){          
-             $("#city"+i).text(Clst[i].Ct);
+    var b=Clst.length-1;
+    var a=0;
+           for(i=b; i>=0; i--){                
+             $("#city"+a).text(Clst[i].Ct);
+              a++;
          }
-    }
-   
+    }  
     $("#search").on("click",fetchWeather);
 
     function fetchWeather(City){
@@ -85,7 +84,6 @@ $(document).ready(function (){
          url:Vurl,
          method:"GET",
      }).then(function(answer){     
-console.log(answer);
 var idx=answer.value
 $("#UV").text(idx);
 //all conditions for the uv index
@@ -104,9 +102,6 @@ $("#UV").removeClass("badge-success");
 $("#UV").removeClass("badge-warning");
 $("#UV").addClass("badge-danger");
 }    
-
-
-
 //bracket for uv index
      });
 
@@ -149,27 +144,13 @@ $("#UV").addClass("badge-danger");
         div3.append(ftr).append(ftr2);
         div1.append(div2).append(div3);
         //rendering the bocks 
-        $(".target1").append(div1);
-      
-    }
-    
-
-
+        $(".target1").append(div1); 
+    }    
 //this bracket is for the 2nd Ajax function 
     })
-//fetching for UV index
-
-
-
-
 //this bracket is for fetch weather function
     }
-
-
-
-
 });
-
  function writeMem() {
 //     //if localStore is empty then stringify Cities
      var isData=localStorage.getItem("City-list");
@@ -186,11 +167,14 @@ $("#UV").addClass("badge-danger");
          }
          loadHis();
      };
-
 function loadHis(){
     // write on the list of cities 
     isData=localStorage.getItem("City-list");
     Clst=JSON.parse(isData);
-       for(i=0; i<Clst.length; i++){
-              $("#city"+i).text(Clst[i].Ct);}
+    b=Clst.length-1;
+    a=0;
+        for(i=b; i>=0; i--){                  
+           $("#city"+a).text(Clst[i].Ct);
+             a++;
+         }
  };
