@@ -69,7 +69,11 @@
 
 .form-inline {
     margin-top: 20px;
-    background-color:#F29F05 ;
+   
+}
+a{
+    color: black;
+    font-size: x-large;
 }
 .card-body {
     margin-top: 20px;
