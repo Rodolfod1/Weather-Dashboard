@@ -29,7 +29,7 @@ $(document).ready(function (){
      }
      Cities={Ct:City};
      writeMem();
-        // qUrl="http://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY;
+      
         qUrl="https://api.openweathermap.org/data/2.5/weather?q="+City+"&appid="+KEY+"&units="+Units;
         // calling our Ajax function 
         $.ajax({
