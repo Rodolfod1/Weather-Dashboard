@@ -1,6 +1,7 @@
 # Weather-Dashboard
 Multi City Weather Dashboard Application 
-
+  - Access this link to deploy the application:
+    <https://rodolfod1.github.io/Weather-Dashboard/Index.html>
 
 ## My approach to this project (Third party web API):
 - My need to research and learn different techniques enabled me to think outside the box on this project.
@@ -27,7 +28,7 @@ Multi City Weather Dashboard Application
 
     - Example of the user interface:
     ![selectionMethodImage](Assets/selectionMethod.jpg)
-     ![selectionMethod2Image](Assets/userSelection.jpg)
+    ![selectionMethod2Image](Assets/userSelection.jpg)
 
 * To run the application:
   - This application runs as soon it is deployed
@@ -35,7 +36,8 @@ Multi City Weather Dashboard Application
 
 * Style:
 - Dynamically generated weather blocks powered by jQuery designed using Bootstrap 4.0 a sober and bold style.
-  -Example of mobile deployment:
+
+- Example of mobile deployment:
    ![mobileDeployment1Image](Assets/mobileVersion1.jpg)
    ![mobileDeployment2Image](Assets/mobileVersion2.jpg)
  
@@ -49,7 +51,7 @@ Multi City Weather Dashboard Application
     ![APIcallexampleimage](Assets/APIcallExample.jpg)
 
     - Example of jQuery and API management.
-    ![ObjectCodeExample](Assets/code example2.jpg) I
+    ![ObjectCodeExample](Assets/codeEexample2.jpg) I
 
     *This Project contents:
   - Index.html - hosting the web page application all information is updated dynamically from the js file .
