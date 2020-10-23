@@ -16,6 +16,9 @@ tr {
     color: #ffff;
 }
 
+.hero {
+    height: 450vh;
+}
 
 
   header {
@@ -33,7 +36,7 @@ tr {
     color:black ;
 }
 .rng {
-   
+  
     margin: none;
     padding: none;
     width: 100vw;
@@ -46,13 +49,15 @@ tr {
 }
 
 .citywrapper {
-    max-width: 60%;
+    
+    max-width: 25%;
     margin: 0 60px 0 0;
     
 }
 
+
   .container-sm{
-      height: 350vh;
+     
       padding:0;
       margin: 0;
   }
@@ -66,9 +71,36 @@ display: none;
 }
 
 .CTS {
+    /* max-width: 60%; */
+    margin-left: 20px;
     background-color:#02405965 ;
     /* color: #FFFFFF; */
     font-weight: bold;
+
+}
+
+.dashboard {
+    max-width: 50%;
+}
+
+@media screen and (max-width:600px){
+    .citywrapper {
+        max-width: 100%;
+        margin: 0 60px 0 0;
+        
+    }
+   
+    .CTS {
+        /* max-width: 60%; */
+        margin-left: 20px;
+        background-color:#02405965 ;
+        /* color: #FFFFFF; */
+        font-weight: bold;
+    
+    }
+    .dashboard {
+     max-width: 200%;
+    }
 
 }
 
@@ -87,6 +119,7 @@ a{
 }
 
 .current {
+    
     margin-left: 20px;
     padding: 5px;
     align-content: center;

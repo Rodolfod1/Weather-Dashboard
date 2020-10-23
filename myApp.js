@@ -19,7 +19,24 @@ $(document).ready(function (){
               a++;
          }
     }  
+    // function to enable the enter key and the click at the same time 
+    $("#citySelect").keydown(function(event){
+        var code=event.which;
+        if (code===13){
+      event.preventDefault();
+       $("#search").click();
+    //  fetchWeather();
+  }
+    });
+
     $("#search").on("click",fetchWeather);
+    $(".history").on("click",function(event){
+        event.preventDefault();
+        var cid=$(this).text();
+        console.log(cid);
+      $(".mycity").val(cid);
+        $("#search").click();
+    })
 
     function fetchWeather(City){
         $(".target1").empty(); // removes all previous information from the cards 
