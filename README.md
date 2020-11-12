@@ -1,13 +1,13 @@
-# Weather-Dashboard
+# **Weather-Dashboard**
 Multi City Weather Dashboard Application 
   - Access this link to deploy the application:
     <https://rodolfod1.github.io/Weather-Dashboard/Index.html>
 
 ## My approach to this project (Third party web API):
 - My need to research and learn different techniques enabled me to think outside the box on this project.
-- Moment.js was used extensively on this application to get accurate timing between the searched city and the current local time.
+- `Moment.js` was used extensively on this application to get accurate timing between the searched city and the current local time.
 - HTML with minimum content since most of it is dynamically generated. CSS is modified dynamically.
-- Powered by Jquery all the CSS is generated and updated to comply with bootstrap 4.0 to give a responsive sense to the app, thinking on mobile first. 
+- Powered by Jquery all the CSS is generated and updated to comply with `bootstrap 4.0` to give a responsive sense to the app, thinking on `mobile first`. 
 
 
 

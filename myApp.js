@@ -14,7 +14,7 @@ $(document).ready(function (){
         Clst=JSON.parse(isData)
         var b=Clst.length-2;
         //this loads the last city searched 
-        $("#citySelect").val(Clst[b+1].Ct);   
+        $("#citySelect").val(localStorage.getItem("lastCity"));   
         var a=0;
         for(i=b; i>=0; i--){                
             $("#city"+a).text(Clst[i].Ct);
@@ -121,9 +121,7 @@ $(document).ready(function (){
             $("#UV").addClass("badge-danger");
         }    
         //bracket for uv index
-     });
-
- 
+     }); 
     });
     /// calling the 5 day forecast 
     var fUrl="https://api.openweathermap.org/data/2.5/forecast?q="+City+"&appid="+KEY+"&units="+Units;
@@ -178,11 +176,18 @@ function writeMem() {
     } else {
         // if there is data in localStorage then convert booking into array and assign it to Clst
         Clst=JSON.parse(isData);
-         // now we can add the updated array Cities into the Clst
-        Clst.push(Cities);
-        //adding the updating array to our Clinch localStorage
-        localStorage.setItem("City-list",JSON.stringify(Clst));
-         }
+        var b=Clst.length-1
+        var searched=$("#citySelect").val()
+        //this stores the last searched city to use it on the reload page 
+        localStorage.setItem("lastCity",searched)
+        // if the last searched city already exist on the recent searches do NOT update the list 
+        if  (!Clst.some(cit => cit.Ct===searched)){   
+            // now we can add the updated array Cities into the Clst
+            Clst.push(Cities);
+            //adding the updating array to our Clinch localStorage
+            localStorage.setItem("City-list",JSON.stringify(Clst));
+            }      
+    }
     loadHis();
 };
 function loadHis(){
@@ -190,10 +195,9 @@ function loadHis(){
     isData=localStorage.getItem("City-list");
     Clst=JSON.parse(isData);
     b=Clst.length-1;
-    $("#city0").text(Clst[b].Ct)
-    // a=0;
-    //     for(i=b; i>=0; i--){                  
-    //        $("#city"+a).text(Clst[i].Ct);
-    //          a++;
-    //      }
+     a=0;
+         for(i=b; i>=0; i--){                  
+        $("#city"+a).text(Clst[i].Ct);
+              a++;
+          }
  };

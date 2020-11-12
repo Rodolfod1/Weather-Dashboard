@@ -5,7 +5,8 @@
 }
 
 body {
-    background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg') no-repeat center center fixed;
+    background: url('Assets/darkSkyes.jpg') no-repeat center center fixed;
+    /* background: url('https://cdn.wallpapersafari.com/21/67/g3yNnR.jpg') no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -143,7 +144,7 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: 20px;
-    color: #024059;
+    color:#C5E8E5;
 
 }
 .copyright {
@@ -153,6 +154,6 @@ footer {
 .fab {
     margin: 3px 10px 3px 10px;
     text-align: center;
-    color:#024059 ;
+    color:#C5E8E580 ;
 
 }
